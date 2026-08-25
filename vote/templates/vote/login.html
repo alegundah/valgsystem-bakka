@@ -1,0 +1,20 @@
+{% extends "vote/base.html" %}
+
+{% block title %} IM VALG 2026 / Login {% endblock %}
+
+{% block content %}
+    <div class="login-bg d-flex flex-column justify-content-center align-items-center min-vh-100 text-center">
+        <h1 class="fw-bold mb-4">Velkommen til Valg 2026</h1>
+        <div class="d-flex flex-column align-items-center">
+            <label for="code-input" class="fs-5 mb-2">Skriv inn din kode</label>
+            <form method="post" action="{% url "login" %}">
+            {% csrf_token %}
+                <input id="code-input" type="text" class="form-control text-center" style="max-width: 300px;" name="username">
+                <input type="submit" value="login">
+            </form>
+        </div>
+        {% if error %}
+            <p>Prøv igjen</p>
+        {% endif %}
+    </div>
+{% endblock %}
