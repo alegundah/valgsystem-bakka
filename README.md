@@ -10,3 +10,10 @@ Load database seed
 uv run python manage.py migrate
 uv run python manage.py loaddata seed
 ```
+
+## Docker
+
+Build image and run container
+```text
+docker build . -t vote && docker run -p 8000:8000 valg
+```
