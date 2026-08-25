@@ -1,0 +1,82 @@
+[
+    {
+        "forename": "Gard",
+        "surname": "August Fossum K\u00e5resen",
+        "picture": "",
+        "class_name": "IT",
+        "party_code": null,
+        "party": "Cruiserne",
+        "description": "",
+        "votes": 0
+    },
+    {
+        "forename": "Nils",
+        "surname": "Rennan Lilleheie",
+        "picture": "",
+        "class_name": "MP",
+        "party_code": null,
+        "party": "Uavhengihets Partiet",
+        "description": "",
+        "votes": 0
+    },
+    {
+        "forename": "Tancred",
+        "surname": "Synnestvedt-Neergaard",
+        "picture": "",
+        "class_name": "ITST",
+        "party_code": "DP",
+        "party": "Discord partiet",
+        "description": "",
+        "votes": 0
+    },
+    {
+        "forename": "Erik",
+        "surname": "Haga",
+        "picture": "",
+        "class_name": "MP",
+        "party_code": "EHP",
+        "party": "Eh-partiet",
+        "description": "",
+        "votes": 0
+    },
+    {
+        "forename": "Elias",
+        "surname": "Workneh S\u00f8rby",
+        "picture": "IMG_7876.png",
+        "party_code": null,
+        "class_name": "MPST",
+        "party": "S\u00f8rby",
+        "description": "",
+        "votes": 0
+    },
+    {
+        "forename": "Sol",
+        "surname": "Barrios",
+        "picture": "",
+        "class_name": "MPST",
+        "party_code": null,
+        "party": "Tilbakeskrittspartiet",
+        "description": "",
+        "votes": 0
+    },
+    {
+        "forename": "Mykhailo",
+        "surname": "Huseinov",
+        "picture": "",
+        "class_name": "ITST",
+        "party_code": null,
+        "party": "GYM",
+        "description": "",
+        "votes": 0
+    },
+    {
+        "forename": "Oskar",
+        "surname": "Monsen Stensil",
+        "picture": "",
+        "class_name": "IT",
+        "party_code": "DP",
+        "party": "Databrus Partiet",
+        "description": "",
+        "votes": 0
+    }
+]

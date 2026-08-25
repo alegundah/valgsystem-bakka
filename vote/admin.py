@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from .models import ClassName, Candidate, User
+from .models import Candidate, User
 
-admin.site.register(ClassName)
 admin.site.register(Candidate)
 admin.site.register(User)
