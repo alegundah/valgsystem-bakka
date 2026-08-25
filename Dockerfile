@@ -5,11 +5,12 @@ WORKDIR /app
 
 RUN uv python install 3.13.15
 
-COPY pyproject.toml uv.lock ./
+COPY pyproject.toml uv.lock .
 RUN uv sync --locked --no-install-project --no-dev
 
 COPY . .
 ENV PATH="/app/.venv/bin:$PATH"
 
 EXPOSE 8000
-CMD ["gunicorn", "valgsystem.wsgi:application", "--bind", "0.0.0.0:8000"]
+
+CMD ["gunicorn", "valgsystem.wsgi", "--bind", "0.0.0.0:8000"]
