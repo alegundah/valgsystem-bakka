@@ -1,7 +1,7 @@
 [
     {
         "forename": "Gard",
-        "surname": "August Fossum K\u00e5resen",
+        "surname": "August Fossum Kåresen",
         "picture": "",
         "class_name": "IT",
         "party_code": null,
@@ -41,11 +41,11 @@
     },
     {
         "forename": "Elias",
-        "surname": "Workneh S\u00f8rby",
+        "surname": "Workneh Sørby",
         "picture": "vote/images/elias.png",
         "party_code": null,
         "class_name": "MPST",
-        "party": "S\u00f8rby",
+        "party": "Sørby",
         "description": "",
         "votes": 0
     },
