@@ -1,13 +1,42 @@
-{% extends "base.html" %} {% block title %}Endre meg (jeg er
-tittelen som står på tabben)
-
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-
-{% endblock %} {% block content%}
+{% extends "vote/base.html" %} {% block title %} Stem på
+Kandinater {% endblock %} {% block content%}
 <!-- Fyll ut boostrap her -->
-<h1>hello world</h1>
+<br />
+<br />
+<h1 class="text-center pt-5">Stem på Kandinater.</h1>
+<br />
+<div
+	class="d-flex justify-content-center bg-dark text_white py-5 rounded mx-auto gap-5 w-50 h-75 align-items-center"
+>
+	<div
+		class="flex-direction:row flex-colum gap-5 justify-content-start text-white text-center gap bg-secondary align-items-center py-5 px-5 rounded"
+	>
+		<!--! LEGG PÅ BILDE I DIV CLASSEN SOM BGIMG {{bildeurl}} -->
+
+		<h2>Nils</h2>
+		<button
+			type="button"
+			class="btn bg-danger"
+		>
+			STEM PÅ NILS
+		</button>
+	</div>
+	<div
+		class="flex-direction:row flex-colum gap-5 justify-content-start text-white text-center gap bg-secondary align-items-center py-5 px-5 rounded"
+	>
+		<!--! LEGG PÅ BILDE I DIV CLASSEN SOM BGIMG {{bildeurl}} -->
+
+		<h2>Gard</h2>
+
+		<button
+			type="button"
+			class="btn bg-danger"
+		>
+			STEM PÅ GARD
+		</button>
+	</div>
+	<!--  -->
+	<!--  -->
+</div>
+
 {% endblock %}
