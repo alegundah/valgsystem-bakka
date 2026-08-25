@@ -20,5 +20,7 @@ class Candidate(models.Model):
     party = models.CharField(max_length=40, blank=True)
     description = models.TextField(null=True, blank=True)
 
+    votes = models.IntegerField(default=0)
+
     def __str__(self):
         return " ".join([self.forename, self.surname, ":", self.party])
