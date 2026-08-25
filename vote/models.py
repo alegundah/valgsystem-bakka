@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.crypto import get_random_string
 
 class ClassName(models.Model):
     name = models.CharField(max_length=4)
@@ -23,4 +24,17 @@ class Candidate(models.Model):
     votes = models.IntegerField(default=0)
 
     def __str__(self):
-        return " ".join([self.forename, self.surname, ":", self.party])
+        return f"{self.forename} {self.surname} : {self.party}"
+
+class User(models.Model):
+    code = models.CharField(
+        max_length=10,
+        default=get_random_string(length=10),
+        primary_key=True
+    )
+    used = models.BooleanField(default=False)
+    ClassName = models.ForeignKey(ClassName, on_delete=models.CASCADE, default=None)
+
+    def __str__(self):
+        hidden_code = "".join(self.code[0:3] + "*" * 7)
+        return hidden_code
