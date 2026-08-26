@@ -30,5 +30,5 @@ class LoginForm(generic.FormView):
 def index(request):
     return render(request, "vote/kandidat.html")
 
-class ThanksView(generic.view):
+class ThanksView(generic.View):
     template_name = "vote/takk.hmtl"
