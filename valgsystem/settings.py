@@ -99,6 +99,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "vote.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.1/topics/i18n/
@@ -110,6 +111,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+LOGIN_URL = "/vote/login/"
+LOGIN_REDIRECT_URL = "vote"
 
 
 # Static files (CSS, JavaScript, Images)

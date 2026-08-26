@@ -1,4 +1,6 @@
 .git
 .gitignore
 .venv
-__pychache__
+__pycache__
+.DS_Store
+db.sqlite3
