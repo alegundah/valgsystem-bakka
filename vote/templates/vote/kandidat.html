@@ -1,19 +1,18 @@
-{% extends "vote/base.html" %} 
+{% extends "vote/base.html" %} {% block title %} Stem på
+Kandinater {% endblock %} {% block content%}
 
-{% block title %} Stem på Kandinater {% endblock %} 
-
-{% block content%}
-
-<br />
-<br />
 <h1 class="text-center pt-5">Stem på Kandinater.</h1>
-<br />
+
 <div
 	class="d-flex justify-content-center bg-dark text_white py-5 rounded mx-auto gap-5 w-50 h-75 align-items-center"
 >
+	<!-- COntent div -->
+
 	<div
 		class="flex-direction:row flex-colum gap-5 justify-content-start text-white text-center gap bg-secondary align-items-center py-5 px-5 rounded"
+		id="child"
 	>
+		<!-- Container -->
 		<!--! LEGG PÅ BILDE I DIV CLASSEN SOM BGIMG {{bildeurl}} -->
 
 		<h2>Nils</h2>
@@ -24,9 +23,7 @@
 			STEM PÅ NILS
 		</button>
 	</div>
-	<div
-		class="flex-direction:row flex-colum gap-5 justify-content-start text-white text-center gap bg-secondary align-items-center py-5 px-5 rounded"
-	>
+	<div id="child">
 		<!--! LEGG PÅ BILDE I DIV CLASSEN SOM BGIMG {{bildeurl}} -->
 
 		<h2>Gard</h2>
