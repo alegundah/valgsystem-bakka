@@ -112,6 +112,9 @@ USE_I18N = True
 
 USE_TZ = True
 
+LOGIN_URL = "/vote/login/"
+LOGIN_REDIRECT_URL = "vote"
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
