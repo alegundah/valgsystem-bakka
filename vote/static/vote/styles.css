@@ -1,0 +1,33 @@
+.login-bg {
+	background-image: url("/vote/templates/vote/Background.svg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	padding: 3rem 6rem;
+	gap: 2rem;
+	justify-content: center;
+	flex: 1 0 0;
+}
+
+.container {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 2.5rem;
+	justify-content: center;
+}
+
+.card {
+	display: flex;
+	place-content: center;
+	text-align: center;
+	padding: 1rem;
+	background-color: gray;
+	outline: none;
+	padding: 5rem;
+}
