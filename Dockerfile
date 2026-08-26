@@ -9,11 +9,13 @@ COPY pyproject.toml uv.lock .
 RUN uv sync --locked --no-install-project --no-dev
 
 COPY . .
-RUN uv run manage.py migrate
-RUN uv run manage.py loaddata vote/fixtures/seed.json
+
 
 ENV PATH="/app/.venv/bin:$PATH"
 
 EXPOSE 8000
 
+RUN uv run manage.py collectstatic
+RUN uv run manage.py migrate
+RUN uv run manage.py loaddata vote/fixtures/seed.json
 CMD ["gunicorn", "valgsystem.wsgi", "--bind", "0.0.0.0:8000"]

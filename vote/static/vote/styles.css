@@ -1,7 +1,7 @@
 /*todo gjør sånn at det blir 2x2 for local og 3x3 for global. og ha knapp dekke hele bunnen av childrens.  */
 
 .login-bg {
-	background-image: url("/vote/templates/vote/Background.svg");
+	background-image: url("svg/background.svg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;

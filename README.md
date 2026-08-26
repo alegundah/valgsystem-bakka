@@ -17,5 +17,5 @@ uv run manage.py createsuperuser --username 123
 
 Build image and run container
 ```text
-docker build . -t vote && docker run -p 8000:8000 valg
+docker build . -t vote && docker run -p 8000:8000 vote
 ```
