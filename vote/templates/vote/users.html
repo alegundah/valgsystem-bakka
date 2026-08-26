@@ -1,0 +1,21 @@
+{% extends 'vote/base.html' %}
+
+{% block title %} Koder {% endblock title %} Koder 
+
+{% block content %}
+<form id="refresh_users" method="POST" action="{% url "vote_users" %}">
+    {% csrf_token %}
+    <button type="button" name="refresh_users" 
+    onclick="if (confirm('Are you sure you want to delete this item?')) document.getElementById('refresh_users').submit();"
+    >Refresh all users</button>
+</form>
+    {% for group in groups %}
+        <h1>{{ group }}</h1>
+        
+        <ul>
+            {% for user in group.users.all %}
+                <li>{{ user.username }}</li>
+            {% endfor %}
+        </ul>
+            {% endfor %}
+    {% endblock content %}

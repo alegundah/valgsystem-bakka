@@ -1,41 +1,28 @@
 {% extends "vote/base.html" %} 
 
-{% block title %} IM VALG 2026 / Stem {% endblock %} 
+{% block title %} / Stem {% endblock %} 
 
 {% block content%}
 
 
 <div class="content">
 	<h1 class="text-center pt-5">Stem på Kandinater.</h1>
+
 	<div class="container">
-		<div class="card">
-			<h2>Nils</h2>
-			<button
-				type="button"
-				class="btn bg-danger"
-			>STEM PÅ NILS</button>
-		</div>
-		<div class="card">
-			<h2>Nils</h2>
-			<button
-				type="button"
-				class="btn bg-danger"
-			>STEM PÅ NILS</button>
-		</div>
-		<div class="card">
-			<h2>Nils</h2>
-			<button
-				type="button"
-				class="btn bg-danger"
-			>STEM PÅ NILS</button>
-		</div>
-		<div class="card">
-			<h2>Nils</h2>
-			<button
-				type="button"
-				class="btn bg-danger"
-			>STEM PÅ NILS</button>
-		</div>
+		<form method="POST" action="{% url "vote" %}">
+			{% csrf_token %}
+			{% for candidate in candidates %}
+				<div class="card">
+					<h2>{{ candidate.name }}</h2>
+					<button
+					type="submit"
+					class="btn bg-danger"
+					name="candidate"
+					value="{{candidate.pk}}"
+					>Stem på {{ candidate.forename }}</button>
+				</div>
+			{% endfor %}
+		</form>
 	</div>
 </div>
 
