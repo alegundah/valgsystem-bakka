@@ -23,7 +23,8 @@
 	flex-flow: row wrap;
 	gap: 2.5rem;
 	flex-wrap: wrap;
-	width: 100vh;
+	max-width: 100vh;
+	max-height: 100vh;
 	justify-content: center;
 }
 
@@ -31,7 +32,7 @@
 	display: flex;
 	place-content: center;
 	text-align: center;
-	padding: 1rem;
+
 	background-color: gray;
 	outline: none;
 	flex-wrap: wrap;
@@ -44,5 +45,5 @@
 }
 .card button {
 	position: relative;
-	top: 70px;
+	top: 80px;
 }
