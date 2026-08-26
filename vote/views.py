@@ -29,3 +29,6 @@ class LoginForm(generic.FormView):
 @login_required
 def index(request):
     return render(request, "vote/kandidat.html")
+
+class ThanksView(generic.view):
+    template_name = "vote/takk.hmtl"
