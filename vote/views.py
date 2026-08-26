@@ -17,9 +17,13 @@ class LoginForm(generic.FormView):
         try:
             user = User.objects.get(username=form.cleaned_data["username"])
         except User.DoesNotExist:
-            return self.form_invalid(form)
+            return render(self.request, self.template_name, {"error": True})
+            
         login(self.request, user)
         return super().form_valid(form)
+
+    def form_invalid(self, form):
+        return render(self.request, self.template_name, {"error": True})
 
 
 @login_required
