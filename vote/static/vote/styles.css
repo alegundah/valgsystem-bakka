@@ -23,6 +23,7 @@
 	flex-flow: row wrap;
 	gap: 2.5rem;
 	flex-wrap: wrap;
+	width: 100vh;
 	justify-content: center;
 }
 
@@ -36,7 +37,12 @@
 	flex-wrap: wrap;
 	padding: 5rem;
 }
+
+.card {
+	display: grid;
+	grid-template-columns: repeat(auto 2 auto 2);
+}
 .card button {
 	position: relative;
-	top: 81px;
+	top: 70px;
 }
