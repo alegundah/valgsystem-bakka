@@ -13,6 +13,7 @@
 </head>
 {% block extra_js %}{% endblock %}
 <body>
+<<<<<<< HEAD
   {% if user.is_authenticated %}
   <header class="d-flex justify-content-between align-items-center p-3 bg-light border-bottom">
     <span class="fw-bold">Brukernavn: {{ user.username }}</span>
@@ -27,6 +28,11 @@
     {% block content %}{% endblock %}
   </main>
 
+=======
+  <div class="content">
+  {% block content %}{% endblock %}
+  </div>
+>>>>>>> 76d6e157952f721047db2c398ffaa4da457ae6da
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

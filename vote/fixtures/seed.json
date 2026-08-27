@@ -37,7 +37,7 @@
   "fields": {
     "forename": "Gard",
     "surname": "August Fossum Kåresen",
-    "picture": "",
+    "picture": "/vote/images/gard.jpg",
     "class_name": 1,
     "party_code": null,
     "party": "Cruiserne",
@@ -50,7 +50,7 @@
   "fields": {
     "forename": "Nils",
     "surname": "Rennan Lilleheie",
-    "picture": "",
+    "picture": "/vote/images/nils.jpg",
     "class_name": 3,
     "party_code": "UP",
     "party": "Uavhengihets Partiet",
@@ -63,7 +63,7 @@
   "fields": {
     "forename": "Tancred",
     "surname": "Synnestvedt-Neergaard",
-    "picture": "",
+    "picture": "/vote/images/tancred.jpg",
     "class_name": 2,
     "party_code": "DP",
     "party": "Discord partiet",
@@ -76,7 +76,7 @@
   "fields": {
     "forename": "Erik",
     "surname": "Haga",
-    "picture": "",
+    "picture": "/vote/images/erik.jpg",
     "class_name": 3,
     "party_code": "EHP",
     "party": "Eh-partiet",
@@ -89,7 +89,7 @@
   "fields": {
     "forename": "Elias",
     "surname": "Workneh Sørby",
-    "picture": "",
+    "picture": "/vote/images/elias.jpg",
     "class_name": 4,
     "party_code": null,
     "party": "Sørby",
@@ -102,7 +102,7 @@
   "fields": {
     "forename": "Sol",
     "surname": "Barrios",
-    "picture": "",
+    "picture": "/vote/images/sol.jpg",
     "class_name": 4,
     "party_code": null,
     "party": "Tilbakeskrittspartiet",
@@ -115,7 +115,7 @@
   "fields": {
     "forename": "Mykhailo",
     "surname": "Huseinov",
-    "picture": "",
+    "picture": "/vote/images/mykhailo.jpg",
     "class_name": 2,
     "party_code": null,
     "party": "GYM",
@@ -128,7 +128,7 @@
   "fields": {
     "forename": "Oskar",
     "surname": "Monsen Stensil",
-    "picture": "",
+    "picture": "/vote/images/oskar.jpg",
     "class_name": 1,
     "party_code": "DP",
     "party": "Databrus Partiet",
@@ -141,10 +141,10 @@
   "fields": {
     "forename": "Benjamin",
     "surname": "Feldgendler",
-    "picture": "",
+    "picture": "/vote/images/benjamin.jpg",
     "class_name": 4,
-    "party_code": "",
-    "party": "FILL ME OUT",
+    "party_code": null,
+    "party": "Blått",
     "description": ""
   }
 }

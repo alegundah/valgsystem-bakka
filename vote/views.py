@@ -81,6 +81,7 @@ class GlobalVoteView(LoginRequiredMixin, generic.ListView):
     template_name = "vote/kandidat.html"
     model = Candidate
     context_object_name = "candidates"
+    extra_context = {"vote_type": "globalt"}
     
     def post(self, request):
         candidate = request.POST["candidate"]
@@ -93,6 +94,7 @@ class GlobalVoteView(LoginRequiredMixin, generic.ListView):
 class ClassVoteView(LoginRequiredMixin, generic.ListView):
     template_name = "vote/kandidat.html"
     context_object_name = "candidates"
+    extra_context = {"vote_type": "lokalt"}
 
     def get_queryset(self):
         class_name = self.request.user.class_name
@@ -154,7 +156,7 @@ class UserView(LoginRequiredMixin, generic.ListView):
         return render(request, self.template_name, {"groups": g})
 
     def handle_no_permission(self):
-        return redirect("admin")
+        return redirect(resolve_url("/admin/"))
 
     def post(self, request):
         delete_users()
