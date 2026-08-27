@@ -3,15 +3,13 @@
 {% block title %} Koder {% endblock title %} Koder 
 
 
-
 {% block content %}
-<form id="refresh_users" method="POST" action="{% url "vote_users" %}">
-    {% csrf_token %}
-    <button type="button" name="refresh_users" 
-    onclick="if (confirm('Er du sikker på dette?')) document.getElementById('refresh_users').submit();"
-    >Refresh all users</button>
-</form>
-<div class="content" style="flex-flow: row wrap;">
+    <form id="refresh_users" method="POST" action="{% url "vote_users" %}">
+        {% csrf_token %}
+        <button type="button" name="refresh_users" 
+        onclick="if (confirm('Er du sikker på dette?')) document.getElementById('refresh_users').submit();"
+        >Refresh all users</button>
+    </form>
     <div class="container">
     {% for group in groups %}
     <div>
@@ -22,6 +20,5 @@
         {% endfor %}
     </div>
     {% endfor %}
-    </div>
 </div>
 {% endblock content %}

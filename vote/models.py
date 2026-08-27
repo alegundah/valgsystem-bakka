@@ -6,7 +6,7 @@ from django.utils.crypto import get_random_string
 class Candidate(models.Model):
     forename = models.CharField(max_length=20)
     surname = models.CharField(max_length=60)
-    picture = models.ImageField(null=True, blank=True)
+    picture = models.CharField(null=True, blank=True)
     class_name = models.ForeignKey(Group, on_delete=models.CASCADE)
     party_code = models.CharField(max_length=5, null=True, blank=True)
     party = models.CharField(max_length=40, blank=True)
