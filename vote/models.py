@@ -32,13 +32,13 @@ class Vote(models.Model):
     )
     global_vote = models.ForeignKey(
         Candidate, 
-        on_delete=models.PROTECT, 
+        on_delete=models.CASCADE, 
         related_name="global_vote",
         null=True
     )
     class_vote = models.ForeignKey(
         Candidate,
-        on_delete=models.PROTECT, 
+        on_delete=models.CASCADE, 
         related_name="class_vote",
         null=True
     )
