@@ -53,3 +53,13 @@ h2 {
 	position: relative;
 	top: 80px;
 }
+
+.login-bg {
+
+        background-image: url("svg/background.svg");  
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
