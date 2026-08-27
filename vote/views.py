@@ -1,8 +1,8 @@
 from django.views import generic
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import *
+from django.http import HttpResponseNotFound
 from django.urls import reverse_lazy, reverse
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import LoginForm
@@ -15,12 +15,12 @@ class LoginForm(generic.FormView):
 
     def form_valid(self, form):
         try:
-            user = User.objects.get(username=form.cleaned_data["username"])
+            user = get_object_or_404(User, username=form.cleaned_data["username"])
         except User.DoesNotExist:
-            return render(self.request, self.template_name, {"error": True})
-            
+            return render(self.request, self.template_name, {"error": True})    
         login(self.request, user)
-        return super().form_valid(form)
+
+        return redirect(resolve_url("vote"))
 
     def form_invalid(self, form):
         return render(self.request, self.template_name, {"error": True})
@@ -57,9 +57,9 @@ class GlobalVoteView(LoginRequiredMixin, generic.ListView):
     def post(self, request):
         candidate = request.POST["candidate"]
         vote: Vote = request.user.vote
-        vote.global_vote = Candidate.objects.get(id=candidate)
+        vote.global_vote = get_object_or_404(Candidate, id=candidate)
         vote.save()
-        return redirect(reverse("thanks"))
+        return redirect(resolve_url("thanks"))
 
 class ClassVoteView(LoginRequiredMixin, generic.ListView):
     template_name = "vote/kandidat.html"
@@ -67,28 +67,33 @@ class ClassVoteView(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         class_name = self.request.user.class_name
-        return Candidate.objects.filter(class_name=class_name)
+        return get_list_or_404(Candidate, class_name=class_name)
 
     
     def post(self, request):
         candidate = request.POST["candidate"]
         vote: Vote = request.user.vote
-        vote.class_vote = Candidate.objects.get(id=candidate)
+        vote.class_vote = get_object_or_404(Candidate, id=candidate)
         vote.save()
-        return redirect(reverse("vote"))
+        return redirect(resolve_url("vote"))
 
 class ThanksView(generic.TemplateView):
     template_name = "vote/thanks.html"
 
 class UserView(LoginRequiredMixin, generic.ListView):
     template_name = "vote/users.html"
-    model = Group
-    context_object_name = "groups"
+
+    def get(self, request):
+        u: User = request.user
+        if not u.is_superuser: 
+            return HttpResponseNotFound()
+        g: Group = get_list_or_404(Group)
+        return render(request, self.template_name, {"groups": g})
 
     def post(self, request):
         delete_users()
-        classes = Group.objects.all()
+        classes = get_list_or_404(Group)
         for c in classes:
             for i in range(20):
                 create_user(c)
-        return HttpResponseRedirect(reverse("vote_users"))
+        return redirect(resolve_url("vote_users"))

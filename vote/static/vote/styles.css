@@ -1,11 +1,15 @@
 /*todo gjør sånn at det blir 2x2 for local og 3x3 for global. og ha knapp dekke hele bunnen av childrens.  */
 
-.login-bg {
-	background-image: url("svg/background.svg");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+body {
+	font-family: "Special Gothic", sans-serif;
+	background: #fff url("svg/background.svg") center no-repeat fixed;
+	background-size: calc(1.35 * max(100vw, 136.11vh));
+	min-height: 100vh;
+}
+
+h1,
+h2 {
+	font-family: "Special Gothic Expanded One", sans-serif;
 }
 
 .content {
@@ -14,8 +18,10 @@
 	padding: 3rem 6rem;
 	gap: 2rem;
 	flex-wrap: wrap;
-	justify-content: center;
+	place-content: center;
+	place-items: center;
 	flex: 1 0 0;
+	min-height: 100vh;
 }
 
 .container {
