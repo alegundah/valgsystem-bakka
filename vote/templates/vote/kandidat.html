@@ -4,26 +4,21 @@
 {% block title %} / {{ vote_type }} {% endblock %} 
 
 {% block content%}
-
-
-<div class="content">
-	<h1 class="text-center">Stem på {{ vote_type }} valg.</h1>
-		<form method="POST" action="{% url "vote" %}">
-			{% csrf_token %}
-			<div class="container">
-				{% for candidate in candidates %}
-					<div class="card" style="background-image: url('{% static candidate.picture %}')">
-						<h2>{{ candidate.party }}</h2>
-						<button
-						type="submit"
-						class="btn-vote"
-						name="candidate"
-						value="{{candidate.pk}}"
-						>Stem på {{ candidate.forename }}</button>
-					</div>
-				{% endfor %}
+<h1 class="text-center">Stem på {{ vote_type }} valg.</h1>
+<form method="POST" action="{% url "vote" %}">
+	{% csrf_token %}
+	<div class="container">
+		{% for candidate in candidates %}
+			<div class="card" style="background-image: url('{% static candidate.picture %}')">
+				<h2>{{ candidate.party }}</h2>
+				<button
+				type="submit"
+				class="btn-vote"
+				name="candidate"
+				value="{{candidate.pk}}"
+				>Stem på {{ candidate.forename }}</button>
 			</div>
-		</form>
-</div>
-
+		{% endfor %}
+	</div>
+</form>
 {% endblock %}
