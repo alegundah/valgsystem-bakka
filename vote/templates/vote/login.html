@@ -1,5 +1,7 @@
 {% extends "vote/base.html" %}
 
+{% load static %}
+
 {% block title %} / Login {% endblock %}
 
 {% block content %}
@@ -11,8 +13,10 @@
             <!-- Login form POST-ing password to login class view -->
             <form method="post" action="{% url "login" %}">
             {% csrf_token %}
-                <input id="code-input" type="text" class="form-control text-center" style="max-width: 300px;" name="username">
+                <input id="code-input" type="password" class="form-control text-center" style="max-width: 300px;" name="username">
                 <input type="submit" value="login">
+                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+            </button>
             </form>
 
         </div>
@@ -20,4 +24,6 @@
             <p class="text-red">Prøv igjen</p>
         {% endif %}
     </div>
+
+    <script src="{% static 'vote/js/password_visibility.js' %}"></script>
 {% endblock %}
