@@ -4,17 +4,11 @@
 {% block title %}Takk for stemmen{% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
+<link rel="stylesheet" href="{% static "vote/thanks.css" %}">
 
-<link rel="stylesheet" href="{% static 'vote/thanks.css' %}">
-
-<h1 class="text-center">Takk for dine stemmer</h1>
+<h1 class="text">Takk for dine stemmer</h1>
 
 <a href="{% url 'stats' %}" class="btn-stats">Se statistikk</a>
-
-=======
-<h1 class="text">Takk for dine stemmer</h1>
->>>>>>> 76d6e157952f721047db2c398ffaa4da457ae6da
 {% endblock %}
 
 {% block extra_js %}
