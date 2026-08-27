@@ -11,10 +11,10 @@
 			{% csrf_token %}
 			{% for candidate in candidates %}
 				<div class="card">
-					<h2>{{ candidate.name }}</h2>
+					<h2>{{ candidate.party }}</h2>
 					<button
 					type="submit"
-					class="btn bg-danger"
+					class="btn-vote"
 					name="candidate"
 					value="{{candidate.pk}}"
 					>Stem på {{ candidate.forename }}</button>
