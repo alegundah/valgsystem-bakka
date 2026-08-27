@@ -1,9 +1,46 @@
-{% extends "vote/base.html" %} 
+{% extends "vote/base.html" %}
+{% load static %}
 
-{% block title %} / Stem {% endblock %} 
+{% block title %} Statistikk {% endblock %}
 
-{% block content%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'vote/statistikk.css' %}">
 
+<div class="stats-wrapper">
+  <!-- tabs bar -->
+  <div class="tabs-bar">
+    {% for g in groups %}
+      <a href="?group={{ g }}" class="tab-link {% if selected_group == g %}active{% endif %}">
+        {{ g }}
+      </a>
+    {% endfor %}
+  </div>
 
+  <!-- results box -->
+  <div class="results-box">
+    <div class="table-head">
+      <span>kandidat</span>
+      <span>stemmer</span>
+    </div>
 
+    {% for item in candidates %}
+      <div class="row-item">
+        <div class="party-info">
+          <span class="num-circle">{{ forloop.counter }}</span>
+          <span class="fw-bold">{{ item.candidate.party }}</span>
+        </div>
+
+        <div class="bar-outline">
+          <div class="bar-black" style="width: {{ item.bar_percentage }}%;"></div>
+        </div>
+
+        <div class="vote-val">
+          {{ item.votes }}
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-center text-muted my-4">Ingen stemmer registrert yet.</p>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}

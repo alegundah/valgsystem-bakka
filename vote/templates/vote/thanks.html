@@ -4,7 +4,13 @@
 {% block title %}Takk for stemmen{% endblock %}
 
 {% block content %}
+
+<link rel="stylesheet" href="{% static 'vote/thanks.css' %}">
+
 <h1 class="text-center">Takk for dine stemmer</h1>
+
+<a href="{% url 'stats' %}" class="btn-stats">Se statistikk</a>
+
 {% endblock %}
 
 {% block extra_js %}
