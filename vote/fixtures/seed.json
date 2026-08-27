@@ -134,5 +134,18 @@
     "party": "Databrus Partiet",
     "description": ""
   }
+},
+{
+  "model": "vote.candidate",
+  "pk": 9,
+  "fields": {
+    "forename": "Benjamin",
+    "surname": "Feldgendler",
+    "picture": "",
+    "class_name": 4,
+    "party_code": "",
+    "party": "FILL ME OUT",
+    "description": ""
+  }
 }
 ]

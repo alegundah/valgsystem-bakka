@@ -1,6 +1,5 @@
 from django.views import generic
 from django.shortcuts import *
-from django.http import HttpResponseNotFound
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -28,6 +27,8 @@ class LoginForm(generic.FormView):
 
 class VoteView(LoginRequiredMixin, generic.View):
     def route_view(self):
+        if self.request.user.is_superuser:
+            return GlobalVoteView
         vote: Vote = self.request.user.vote
         if vote.used():
             return None
@@ -86,14 +87,17 @@ class UserView(LoginRequiredMixin, generic.ListView):
     def get(self, request):
         u: User = request.user
         if not u.is_superuser: 
-            return HttpResponseNotFound()
+            return self.handle_no_permission()
         g: Group = get_list_or_404(Group)
         return render(request, self.template_name, {"groups": g})
+
+    def handle_no_permission(self):
+        return redirect("admin")
 
     def post(self, request):
         delete_users()
         classes = get_list_or_404(Group)
         for c in classes:
-            for i in range(20):
+            for i in range(25):
                 create_user(c)
         return redirect(resolve_url("vote_users"))

@@ -19,3 +19,12 @@ Build image and run container
 ```text
 docker build . -t vote && docker run -p 8000:8000 vote
 ```
+
+
+## Missing stuff
+
+- Statistics page.  [figma page](https://www.figma.com/design/OQAvTrYkmZOmgSk8x8JHoW/valgsystem-design?node-id=59-65&t=Zs9TWnJrjcbhCid9-4) 
+- Create a way to end the vote and show data.
+- Fill out the rest of Benjamin in vote/fixtures/seed.json
+- Plan how to share codes. We have a page for codes(/brukere/) but how do we share them?
+- Make a button to log out that is available on all screens

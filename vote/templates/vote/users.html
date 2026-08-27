@@ -2,20 +2,26 @@
 
 {% block title %} Koder {% endblock title %} Koder 
 
+
+
 {% block content %}
 <form id="refresh_users" method="POST" action="{% url "vote_users" %}">
     {% csrf_token %}
     <button type="button" name="refresh_users" 
-    onclick="if (confirm('Are you sure you want to delete this item?')) document.getElementById('refresh_users').submit();"
+    onclick="if (confirm('Er du sikker på dette?')) document.getElementById('refresh_users').submit();"
     >Refresh all users</button>
 </form>
+<div class="content" style="flex-flow: row wrap;">
+    <div class="container">
     {% for group in groups %}
+    <div>
         <h1>{{ group }}</h1>
-        
-        <ul>
-            {% for user in group.users.all %}
-                <li>{{ user.username }}</li>
-            {% endfor %}
-        </ul>
-            {% endfor %}
-    {% endblock content %}
+        <b>Antall: {{group.users.count}}</b>
+        {% for user in group.users.all %}
+            <p class="m-0">{{ user.username }}</p>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock content %}
