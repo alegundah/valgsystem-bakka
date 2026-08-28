@@ -2,7 +2,8 @@
 
 body {
 	font-family: "Special Gothic", sans-serif;
-	background: #fff url("svg/background.svg") center no-repeat fixed;
+	background: #fff url("svg/background.svg") center
+		no-repeat fixed;
 	background-size: calc(1.35 * max(100vw, 136.11vh));
 	min-height: 100vh;
 }
