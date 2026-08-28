@@ -1,151 +1,151 @@
 [
-{
-  "model": "auth.group",
-  "pk": 1,
-  "fields": {
-    "name": "IT",
-    "permissions": []
-  }
-},
-{
-  "model": "auth.group",
-  "pk": 2,
-  "fields": {
-    "name": "ITST",
-    "permissions": []
-  }
-},
-{
-  "model": "auth.group",
-  "pk": 3,
-  "fields": {
-    "name": "MP",
-    "permissions": []
-  }
-},
-{
-  "model": "auth.group",
-  "pk": 4,
-  "fields": {
-    "name": "MPST",
-    "permissions": []
-  }
-},
-{
-  "model": "vote.candidate",
-  "pk": 1,
-  "fields": {
-    "forename": "Gard",
-    "surname": "August Fossum Kåresen",
-    "picture": "/vote/images/gard.jpg",
-    "class_name": 1,
-    "party_code": null,
-    "party": "Cruiserne",
-    "description": ""
-  }
-},
-{
-  "model": "vote.candidate",
-  "pk": 2,
-  "fields": {
-    "forename": "Nils",
-    "surname": "Rennan Lilleheie",
-    "picture": "/vote/images/nils.jpg",
-    "class_name": 3,
-    "party_code": "UP",
-    "party": "Uavhengihets Partiet",
-    "description": ""
-  }
-},
-{
-  "model": "vote.candidate",
-  "pk": 3,
-  "fields": {
-    "forename": "Tancred",
-    "surname": "Synnestvedt-Neergaard",
-    "picture": "/vote/images/tancred.jpg",
-    "class_name": 2,
-    "party_code": "DP",
-    "party": "Discord partiet",
-    "description": ""
-  }
-},
-{
-  "model": "vote.candidate",
-  "pk": 4,
-  "fields": {
-    "forename": "Erik",
-    "surname": "Haga",
-    "picture": "/vote/images/erik.jpg",
-    "class_name": 3,
-    "party_code": "EHP",
-    "party": "Eh-partiet",
-    "description": ""
-  }
-},
-{
-  "model": "vote.candidate",
-  "pk": 5,
-  "fields": {
-    "forename": "Elias",
-    "surname": "Workneh Sørby",
-    "picture": "/vote/images/elias.jpg",
-    "class_name": 4,
-    "party_code": null,
-    "party": "Sørby",
-    "description": ""
-  }
-},
-{
-  "model": "vote.candidate",
-  "pk": 6,
-  "fields": {
-    "forename": "Sol",
-    "surname": "Barrios",
-    "picture": "/vote/images/sol.jpg",
-    "class_name": 4,
-    "party_code": null,
-    "party": "Tilbakeskrittspartiet",
-    "description": ""
-  }
-},
-{
-  "model": "vote.candidate",
-  "pk": 7,
-  "fields": {
-    "forename": "Mykhailo",
-    "surname": "Huseinov",
-    "picture": "/vote/images/mykhailo.jpg",
-    "class_name": 2,
-    "party_code": null,
-    "party": "GYM",
-    "description": ""
-  }
-},
-{
-  "model": "vote.candidate",
-  "pk": 8,
-  "fields": {
-    "forename": "Oskar",
-    "surname": "Monsen Stensil",
-    "picture": "/vote/images/oskar.jpg",
-    "class_name": 1,
-    "party_code": "DP",
-    "party": "Databrus Partiet",
-    "description": ""
-  }
-},
-{
-  "model": "vote.candidate",
-  "pk": 9,
-  "fields": {
-    "forename": "Benjamin",
-    "surname": "Feldgendler",
-    "picture": "/vote/images/benjamin.jpg",
-    "class_name": 4,
-    "party_code": null,
-    "party": "Blått",
-    "description": ""
-  }
-}
+	{
+		"model": "auth.group",
+		"pk": 1,
+		"fields": {
+			"name": "IT",
+			"permissions": []
+		}
+	},
+	{
+		"model": "auth.group",
+		"pk": 2,
+		"fields": {
+			"name": "ITST",
+			"permissions": []
+		}
+	},
+	{
+		"model": "auth.group",
+		"pk": 3,
+		"fields": {
+			"name": "MP",
+			"permissions": []
+		}
+	},
+	{
+		"model": "auth.group",
+		"pk": 4,
+		"fields": {
+			"name": "MPST",
+			"permissions": []
+		}
+	},
+	{
+		"model": "vote.candidate",
+		"pk": 1,
+		"fields": {
+			"forename": "Gard",
+			"surname": "August Fossum Kåresen",
+			"picture": "/vote/images/gard.jpg",
+			"class_name": 1,
+			"party_code": null,
+			"party": "Cruiserne",
+			"description": ""
+		}
+	},
+	{
+		"model": "vote.candidate",
+		"pk": 2,
+		"fields": {
+			"forename": "Nils",
+			"surname": "Rennan Lilleheie",
+			"picture": "/vote/images/nils.jpg",
+			"class_name": 3,
+			"party_code": "UP",
+			"party": "Uavhengihets Partiet",
+			"description": ""
+		}
+	},
+	{
+		"model": "vote.candidate",
+		"pk": 3,
+		"fields": {
+			"forename": "Tancred",
+			"surname": "Synnestvedt-Neergaard",
+			"picture": "/vote/images/tancred.jpg",
+			"class_name": 2,
+			"party_code": "DP",
+			"party": "Discord partiet",
+			"description": ""
+		}
+	},
+	{
+		"model": "vote.candidate",
+		"pk": 4,
+		"fields": {
+			"forename": "Erik",
+			"surname": "Haga",
+			"picture": "/vote/images/erik.jpg",
+			"class_name": 3,
+			"party_code": "EHP",
+			"party": "Eh-partiet",
+			"description": ""
+		}
+	},
+	{
+		"model": "vote.candidate",
+		"pk": 5,
+		"fields": {
+			"forename": "Elias",
+			"surname": "Workneh Sørby",
+			"picture": "/vote/images/elias.jpg",
+			"class_name": 4,
+			"party_code": null,
+			"party": "Sørby",
+			"description": ""
+		}
+	},
+	{
+		"model": "vote.candidate",
+		"pk": 6,
+		"fields": {
+			"forename": "Sol",
+			"surname": "Barrios",
+			"picture": "/vote/images/sol.jpg",
+			"class_name": 4,
+			"party_code": null,
+			"party": "Tilbakeskrittspartiet",
+			"description": ""
+		}
+	},
+	{
+		"model": "vote.candidate",
+		"pk": 7,
+		"fields": {
+			"forename": "Mykhailo",
+			"surname": "Huseinov",
+			"picture": "/vote/images/mykhailo.jpg",
+			"class_name": 2,
+			"party_code": null,
+			"party": "GYM",
+			"description": ""
+		}
+	},
+	{
+		"model": "vote.candidate",
+		"pk": 8,
+		"fields": {
+			"forename": "Oskar",
+			"surname": "Monsen Stensil",
+			"picture": "/vote/images/oskar.jpg",
+			"class_name": 1,
+			"party_code": "DP",
+			"party": "Databrus Partiet",
+			"description": ""
+		}
+	},
+	{
+		"model": "vote.candidate",
+		"pk": 9,
+		"fields": {
+			"forename": "Benjamin",
+			"surname": "Feldgendler",
+			"picture": "/vote/images/benjamin.jpg",
+			"class_name": 4,
+			"party_code": null,
+			"party": "Blått",
+			"description": ""
+		}
+	}
 ]
