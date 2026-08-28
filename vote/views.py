@@ -29,11 +29,6 @@ class LoginView(generic.View):
         user = User.objects.filter(username__iexact=code).first()
 
         if user:
-            if hasattr(user, 'vote'):
-                pass
-            else:
-                Vote.objects.get_or_create(user=user)
-
             login(request, user, backend="django.contrib.auth.backends.ModelBackend")
             return redirect("vote")
 
@@ -46,18 +41,19 @@ class VoteView(LoginRequiredMixin, generic.View):
             return StatsView
         if self.request.user.is_superuser:
             return GlobalVoteView
-        
-        try:
-            vote: Vote = self.request.user.vote
-        except getattr(User, 'vote', None).RelatedObjectDoesNotExist:
-            return GlobalVoteView
+
+        vote, _ = Vote.objects.get_or_create(user=self.request.user)
 
         if vote.used():
             return None
-        elif not vote.class_vote:
+
+        has_group = hasattr(self.request.user, "group") and self.request.user.group is not None
+
+        if has_group and not vote.class_vote:
             return ClassVoteView
         elif not vote.global_vote:
             return GlobalVoteView
+
         return None
 
     def get(self, request):
