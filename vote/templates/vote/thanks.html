@@ -1,5 +1,17 @@
-{% extends "vote/base.html" %} {% block title %}Takk for
-stemmen {% endblock %} {% block content%}
-<h1 class="text-center pt-5">Takk for at stemte</h1>
+{% extends "vote/base.html" %}
+{% load static %}
 
+{% block title %}Takk for stemmen{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "vote/thanks.css" %}">
+
+<h1 class="text">Takk for dine stemmer</h1>
+
+<a href="{% url 'stats' %}" class="btn-stats">Se statistikk</a>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+<script src="{% static '/vote/js/confetti.js' %}" defer></script>
 {% endblock %}

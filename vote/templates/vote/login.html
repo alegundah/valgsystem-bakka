@@ -1,23 +1,28 @@
 {% extends "vote/base.html" %}
 
+{% load static %}
+
 {% block title %} / Login {% endblock %}
 
 {% block content %}
-    <div class="login-bg d-flex flex-column justify-content-center align-items-center min-vh-100 text-center">
-        <h1 class="fw-bold mb-4">Velkommen til Valg 2026</h1>
-        <div class="d-flex flex-column align-items-center">
-            <label for="code-input" class="fs-5 mb-2">Skriv inn din kode</label>
+<div class="d-flex flex-column justify-content-center align-items-center min-vh-100 text-center">
+    <h1 class="fw-bold mb-4">Velkommen til Valg 2026</h1>
+    <div class="d-flex flex-column align-items-center">
+        <label for="code-input" class="fs-5 mb-2">Skriv inn din kode</label>
 
-            <!-- Login form POST-ing password to login class view -->
-            <form method="post" action="{% url "login" %}">
-            {% csrf_token %}
-                <input id="code-input" type="text" class="form-control text-center" style="max-width: 300px;" name="username">
-                <input type="submit" value="login">
-            </form>
+        <!-- Login form POST-ing password to login class view -->
+        <form method="post" action="{% url "login" %}">
+        {% csrf_token %}
+            <input id="code-input" type="password" class="form-control text-center" style="max-width: 300px;" name="username">
+            <input type="submit" value="login">
+            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+        </button>
+        </form>
 
-        </div>
-        {% if error %}
-            <p class="text-red">Prøv igjen</p>
-        {% endif %}
     </div>
+    {% if error %}
+        <p class="text-red">Prøv igjen</p>
+    {% endif %}
+</div>
+<script src="{% static 'vote/js/password_visibility.js'%} defer></script>
 {% endblock %}

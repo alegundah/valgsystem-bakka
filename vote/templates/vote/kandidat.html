@@ -1,31 +1,24 @@
 {% extends "vote/base.html" %} 
+{% load static %}
 
-{% block title %} / Stem {% endblock %} 
+{% block title %} / {{ vote_type }} {% endblock %} 
 
 {% block content%}
-
-{% load static %}
-<script src="{% static 'vote/main.js' %}" defer></script>
-
-<div class="content">
-	<h1 class="text-center pt-5">Stem på Kandinater.</h1>
-
+<h1 class="text-center">Stem på {{ vote_type }} valg.</h1>
+<form method="POST" action="{% url "vote" %}">
+	{% csrf_token %}
 	<div class="container">
-		<form method="POST" action="{% url "vote" %}">
-			{% csrf_token %}
-			{% for candidate in candidates %}
-				<div class="card">
-					<h2>{{ candidate.name }}</h2>
-					<button
-					type="submit"
-					class="btn bg-danger"
-					name="candidate"
-					value="{{candidate.pk}}"
-					>Stem på {{ candidate.forename }}</button>
-				</div>
-			{% endfor %}
-		</form>
+		{% for candidate in candidates %}
+			<div class="card" style="background-image: url('{% static candidate.picture %}')">
+				<h2>{{ candidate.party }}</h2>
+				<button
+				type="submit"
+				class="btn-vote"
+				name="candidate"
+				value="{{candidate.pk}}"
+				>Stem på {{ candidate.forename }}</button>
+			</div>
+		{% endfor %}
 	</div>
-</div>
-
+</form>
 {% endblock %}
