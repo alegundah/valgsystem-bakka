@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Special+Gothic&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
   {% load static %}
   <link rel="stylesheet" href="{% static "vote/styles.css" %}">
+  <link rel="stylesheet" href="{% static "vote/input.css" %}">
 </head>
 {% block extra_js %}{% endblock %}
 <body>
@@ -23,7 +24,7 @@
   </header>
   {% endif %}
 
-  <main class="container py-4">
+  <main class="content py-4">
     {% block content %}{% endblock %}
   </main>
 
