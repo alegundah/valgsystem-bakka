@@ -32,13 +32,13 @@ class Vote(models.Model):
     )
     global_vote = models.ForeignKey(
         Candidate, 
-        on_delete=models.PROTECT, 
+        on_delete=models.CASCADE, 
         related_name="global_vote",
         null=True
     )
     class_vote = models.ForeignKey(
         Candidate,
-        on_delete=models.PROTECT, 
+        on_delete=models.CASCADE, 
         related_name="class_vote",
         null=True
     )
@@ -51,5 +51,4 @@ def delete_users():
 
 def create_user(class_name):
     u = User.objects.create(username=get_random_string(length=10), class_name=class_name)
-    u.save()
     v = Vote.objects.create(user=u)
