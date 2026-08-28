@@ -3,10 +3,6 @@ from django.conf import settings
 from django.db import models
 from django.utils.crypto import get_random_string
 
-class VoteManager(models.Model):
-    started = models.BooleanField(default=False)
-    closed = models.BooleanField(default=False)
-
 class Candidate(models.Model):
     forename = models.CharField(max_length=20)
     surname = models.CharField(max_length=60)
