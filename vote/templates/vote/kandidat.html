@@ -1,42 +1,31 @@
-{% extends "vote/base.html" %} {% block title %} Stem på
-Kandinater {% endblock %} {% block content%}
+{% extends "vote/base.html" %} 
 
-<h1 class="text-center pt-5">Stem på Kandinater.</h1>
+{% block title %} / Stem {% endblock %} 
 
-<div
-	class="d-flex justify-content-center bg-dark text_white py-5 rounded mx-auto gap-5 w-50 h-75 align-items-center"
->
-	<!-- COntent div -->
+{% block content%}
 
-	<div
-		class="flex-direction:row flex-colum gap-5 justify-content-start text-white text-center gap bg-secondary align-items-center py-5 px-5 rounded"
-		id="child"
-	>
-		<!-- Container -->
-		<!--! LEGG PÅ BILDE I DIV CLASSEN SOM BGIMG {{bildeurl}} -->
+{% load static %}
+<script src="{% static 'vote/main.js' %}" defer></script>
 
-		<h2>Nils</h2>
-		<button
-			type="button"
-			class="btn bg-danger"
-		>
-			STEM PÅ NILS
-		</button>
+<div class="content">
+	<h1 class="text-center pt-5">Stem på Kandinater.</h1>
+
+	<div class="container">
+		<form method="POST" action="{% url "vote" %}">
+			{% csrf_token %}
+			{% for candidate in candidates %}
+				<div class="card">
+					<h2>{{ candidate.name }}</h2>
+					<button
+					type="submit"
+					class="btn bg-danger"
+					name="candidate"
+					value="{{candidate.pk}}"
+					>Stem på {{ candidate.forename }}</button>
+				</div>
+			{% endfor %}
+		</form>
 	</div>
-	<div id="child">
-		<!--! LEGG PÅ BILDE I DIV CLASSEN SOM BGIMG {{bildeurl}} -->
-
-		<h2>Gard</h2>
-
-		<button
-			type="button"
-			class="btn bg-danger"
-		>
-			STEM PÅ GARD
-		</button>
-	</div>
-	<!--  -->
-	<!--  -->
 </div>
 
 {% endblock %}

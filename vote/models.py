@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser, Group
 from django.conf import settings 
 from django.db import models
+from django.utils.crypto import get_random_string
 
 class Candidate(models.Model):
     forename = models.CharField(max_length=20)
@@ -16,26 +17,39 @@ class Candidate(models.Model):
     
 
 class User(AbstractUser):
-    school_class = models.ForeignKey(
+    class_name = models.ForeignKey(
         Group, 
+        null=True,
         on_delete=models.CASCADE, 
-        null=True, 
-        blank=True,
-        related_name="school_class"
+        related_name="users"
     )
 
 class Vote(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, 
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="vote"
     )
     global_vote = models.ForeignKey(
         Candidate, 
         on_delete=models.PROTECT, 
-        related_name="global_vote"
+        related_name="global_vote",
+        null=True
     )
     class_vote = models.ForeignKey(
-        Candidate, 
+        Candidate,
         on_delete=models.PROTECT, 
-        related_name="class_vote"
+        related_name="class_vote",
+        null=True
     )
+
+    def used(self):
+        return self.global_vote and self.class_vote
+
+def delete_users():
+    User.objects.filter(is_superuser=False).delete()
+
+def create_user(class_name):
+    u = User.objects.create(username=get_random_string(length=10), class_name=class_name)
+    u.save()
+    v = Vote.objects.create(user=u)

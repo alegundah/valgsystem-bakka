@@ -41,13 +41,14 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    "django.middleware.security.SecurityMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware", # WhiteNoise middleware (serves static files)
 ]
 
 ROOT_URLCONF = 'valgsystem.urls'
@@ -112,11 +113,19 @@ USE_I18N = True
 
 USE_TZ = True
 
+LOGIN_URL = "/vote/login/"
+LOGIN_REDIRECT_URL = "vote"
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+# This is for WhiteNoise (serves static files)
+# https://whitenoise.readthedocs.io/en/stable/django.html
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Email

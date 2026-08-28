@@ -1,13 +1,49 @@
-h1 {
-	margin-top: 40px;
-	margin-bottom: 40px;
+/*todo gjør sånn at det blir 2x2 for local og 3x3 for global. og ha knapp dekke hele bunnen av childrens.  */
+
+.login-bg {
+	background-image: url("svg/background.svg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
-#child {
+.content {
 	display: flex;
 	flex-direction: column;
 	padding: 3rem 6rem;
 	gap: 2rem;
-	color: white;
-	border-radius: 4rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex: 1 0 0;
+}
+
+.container {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 2.5rem;
+	flex-wrap: wrap;
+	max-width: 100vh;
+	max-height: 100vh;
+	justify-content: center;
+}
+
+.card {
+	display: flex;
+	place-content: center;
+	text-align: center;
+
+	background-color: gray;
+	outline: none;
+	flex-wrap: wrap;
+	padding: 5rem;
+}
+
+.card {
+	display: grid;
+	grid-template-columns: repeat(auto 2 auto 2);
+}
+.card button {
+	position: relative;
+	top: 80px;
 }
