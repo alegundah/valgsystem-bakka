@@ -1,0 +1,22 @@
+form {
+	display: flex;
+	flex-direction: row;
+
+	align-items: center;
+	justify-items: center;
+}
+
+#toggle1234 {
+	position: relative;
+	right: 41px;
+	justify-content: center;
+	border: none;
+}
+
+#toggle1234:hover {
+	background: transparent;
+}
+
+#hidden:hover {
+	filter: invert(100);
+}
